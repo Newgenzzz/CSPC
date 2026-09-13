@@ -1,7 +1,3 @@
-"""
-Compare the speed of the pure-Python decay loop vs the vectorised NumPy version.
-"""
-
 import time
 from decay import simulate, simulate_loop
 
