@@ -8,7 +8,7 @@ conda activate cspc
 
 ---
 
-# CSPC Lab A
+# CSPC LABS
 
 ## Testing Questions (PW1 / Lab A)
 
@@ -43,7 +43,8 @@ or absolute tolerance instead of requiring exact equality, which is needed since
   operations matter so much for large simulations instead of relying on manual
   loops.
 
-  ## PW1 — Lab B
+
+## PW1 — Lab B
 
 **Data:** `decay_observed.csv` contains 40 measurements of particle count vs. time,
 starting at N₀ ≈ 5000 counts at t=0 and decaying to below 20 counts by t≈19.5,
