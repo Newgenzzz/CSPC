@@ -68,6 +68,6 @@ with a single command instead of manual steps.
 **Report about the largest difference:** The recovered position differs from the original by at most about 0.78 m, because integration sums the noisy acceleration values and their random errors partly cancel, so integration suppresses noise where differentiation amplified it.
 
 **Integrating back:** integrating the noisy acceleration twice recovered the position to within about 0.78 m of the original. Integration sums values, so random errors partly cancel and the noise is suppressed.
-![motion](PW2/Lab%2OA/motion.png)
+![motion](PW2/Lab%20A/motion.png)
 **Bonus:** the tracked path is a figure-eight; the speed computed from np.gradient on x and y has mean about 23.7 m/s but shows small jitter caused by differentiating noisy positions.
-![bonus](PW2/Lab%2OA/trajectory.png)
+![bonus](PW2/Lab%20A/trajectory.png)
