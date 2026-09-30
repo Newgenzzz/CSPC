@@ -64,8 +64,10 @@ with a single command instead of manual steps.
 ## PW 2 — Lab A
 
 **The Noise Problem Explanation:** My gravity measurement was way off of the real numerical value of g which was around -9,8. My calculation is around -8,58. Differentiating compares neighbouring measurements that are only 0.1 s apart, so a small position error gets divided by a tiny time step (and by it again for the second derivative), which magnifies the noise enormously, while the position data itself is only off by millimetres.
+
 **Report about the largest difference:** The recovered position differs from the original by at most about 0.78 m, because integration sums the noisy acceleration values and their random errors partly cancel, so integration suppresses noise where differentiation amplified it.
+
 **Integrating back:** integrating the noisy acceleration twice recovered the position to within about 0.78 m of the original. Integration sums values, so random errors partly cancel and the noise is suppressed.
-![motion](PW2/Lab%2O/motion.png)
+![motion](PW2/Lab%2OA/motion.png)
 **Bonus:** the tracked path is a figure-eight; the speed computed from np.gradient on x and y has mean about 23.7 m/s but shows small jitter caused by differentiating noisy positions.
-![bonus](PW2/Lab%20A/trajectory.png)
+![bonus](PW2/Lab%2OA/trajectory.png)
