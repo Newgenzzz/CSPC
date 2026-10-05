@@ -24,7 +24,7 @@ fig, axes = plt.subplots(3,1,sharex=True, figsize = (8,9))
 axes[0].plot(t,y)
 axes[0].set_ylabel("Position (m)")
 
-axes[1].plot(v,t)
+axes[1].plot(t,v)
 axes[1].set_ylabel("Velocity (m/sec)")
 
 axes[2].plot(t,a)
