@@ -71,3 +71,39 @@ with a single command instead of manual steps.
 ![motion](PW2/Lab%20A/motion.png)
 **Bonus:** the tracked path is a figure-eight; the speed computed from np.gradient on x and y has mean about 23.7 m/s but shows small jitter caused by differentiating noisy positions.
 ![bonus](PW2/Lab%20A/trajectory.png)
+## PW2 --- Lab B
+
+### Part 2: how the three methods compared
+
+**2A, f(x) = (x-3)^2 + 1, from x0 = 0.** Gradient descent (lr = 0.1), Newton and SLSQP all reach x = 3. The function is convex with one minimum, so the methods agree.
+
+**2B, g(x) = x^4 - 3x^2 + x + 5.** g has two minima (x = -1.30, the global one, and x = 1.13, a local one) and a maximum at x = 0.17.
+
+| Start | Gradient descent (lr = 0.01) | Newton | SLSQP |
+|---|---|---|---|
+| x0 = 0 | -1.3008 (global min) | 0.1699 (maximum, g'' = -5.65) | -1.3009 (global min) |
+| x0 = 2 | 1.1309 (local min) | 1.1309 (minimum, g'' = 9.35) | -1.3006 (global min) |
+
+- The methods agree on the easy function but not on g.
+- From x0 = 0, Newton landed on a maximum, not a minimum. It solves g'(x) = 0, which a maximum also satisfies, so the sign of g'' has to be checked.
+- The starting point changed the result. From x0 = 0 the slope points left, toward the global minimum. From x0 = 2 gradient descent and Newton stay in the right-hand valley and stop at the local minimum. SLSQP took a large first step and jumped to the global minimum.
+
+### Part 3: reaction rate
+
+Fitted rate constant k = __ (SLSQP, bounds (0, 5), start 0.5). The fitted curve passes through the data (`kinetics.png`).
+
+### Part 4: equilibrium composition (K = 15.6)
+
+Newton and SLSQP agree: x = 0.6638.
+
+| Species | Amount (mol) |
+|---|---|
+| H2 | 0.336 |
+| I2 | 0.336 |
+| HI | 1.328 |
+
+Plot: `equilibrium.png`.
+
+### Part 5 (bonus): titration
+
+Equivalence point at V = __ mL, where the slope of the pH curve is largest (`titration.png`).
